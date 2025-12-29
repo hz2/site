@@ -1,0 +1,213 @@
+# hugo site configuration
+# run: hugo server -D (include drafts)
+# build: hugo (generates to public/)
+
+# ------------------------------------------------------------------------------
+# site metadata
+# ------------------------------------------------------------------------------
+
+# github pages url
+baseURL = "https://hz2.github.io/site/"
+languageCode = "en-us"
+title = "uhh idk yet"
+
+# theme is not used - all templates are in layouts/
+# theme = ""
+
+# ------------------------------------------------------------------------------
+# build settings
+# ------------------------------------------------------------------------------
+
+# disable unused built-in features to reduce complexity
+disableKinds = ["taxonomy", "term"]
+# re-enable when needed:
+# disableKinds = []
+
+# ------------------------------------------------------------------------------
+# content settings
+# ------------------------------------------------------------------------------
+
+# default content language
+defaultContentLanguage = "en"
+
+# summarize blog posts at this length if no explicit summary
+summaryLength = 70
+
+# enable git info for lastmod dates (requires git repo)
+enableGitInfo = false
+
+# ------------------------------------------------------------------------------
+# permalinks
+# ------------------------------------------------------------------------------
+
+# clean urls without .html extension
+# /blog/my-post/ instead of /blog/my-post.html
+[permalinks]
+blog = "/blog/:year/:month/:slug/"
+notes = "/notes/:slug/"
+
+# ------------------------------------------------------------------------------
+# markup configuration
+# ------------------------------------------------------------------------------
+
+[markup]
+# use goldmark (default markdown parser)
+defaultMarkdownHandler = "goldmark"
+
+[markup.goldmark]
+
+[markup.goldmark.extensions]
+# enable footnotes
+footnote = true
+# strikethrough with ~~text~~
+strikethrough = true
+# tables
+table = true
+# task lists
+taskList = true
+
+[markup.goldmark.extensions.passthrough]
+# enable passthrough for math delimiters
+# this prevents goldmark from escaping latex
+enable = true
+
+[markup.goldmark.extensions.passthrough.delimiters]
+# inline math: $...$
+inline = [["$", "$"], ["\\(", "\\)"]]
+# block math: $$...$$ or \[...\]
+block = [["$$", "$$"], ["\\[", "\\]"]]
+
+[markup.goldmark.renderer]
+# allow raw html in markdown
+unsafe = true
+
+[markup.highlight]
+# syntax highlighting style
+# see: https://xyproto.github.io/splash/docs/
+style = "monokailight"
+# show line numbers
+lineNos = false
+# no classes, inline styles
+noClasses = true
+
+[markup.tableOfContents]
+# toc depth
+startLevel = 2
+endLevel = 4
+
+# ------------------------------------------------------------------------------
+# taxonomies
+# ------------------------------------------------------------------------------
+
+# disabled by default via disableKinds
+# uncomment to enable tags and categories
+# [taxonomies]
+#   tag = "tags"
+#   category = "categories"
+#   series = "series"
+
+# ------------------------------------------------------------------------------
+# menus
+# ------------------------------------------------------------------------------
+
+[[menus.main]]
+name = "home"
+pageRef = "/"
+weight = 10
+
+[[menus.main]]
+name = "notes"
+pageRef = "/notes"
+weight = 20
+
+[[menus.main]]
+name = "blog"
+pageRef = "/blog"
+weight = 30
+
+# [[menus.main]]
+# name = "photos"
+# pageRef = "/photos"
+# weight = 40
+
+[[menus.main]]
+name = "workouts"
+pageRef = "/workouts"
+weight = 50
+
+# [[menus.main]]
+# name = "about"
+# pageRef = "/about"
+# weight = 100
+
+# [[menus.main]]
+#   name = "recipes"
+#   pageRef = "/recipes"
+#   weight = 50
+
+# ------------------------------------------------------------------------------
+# params (custom site parameters)
+# ------------------------------------------------------------------------------
+
+[params]
+# site description for meta tags
+description = "personal notes, blog, and workout data"
+
+author = "Jason Devers"
+
+# default to math disabled globally
+# enable per-page via front matter: math = true
+math = false
+
+# date format for display
+dateFormat = "2006-01-02"
+
+# show reading time on posts
+showReadingTime = true
+
+# future params for expansion
+# photosPerPage = 20
+# recipesShowIngredients = true
+
+# ------------------------------------------------------------------------------
+# outputs
+# ------------------------------------------------------------------------------
+
+[outputs]
+home = ["HTML", "RSS"]
+section = ["HTML", "RSS"]
+page = ["HTML"]
+
+# ------------------------------------------------------------------------------
+# privacy (gdpr compliance)
+# ------------------------------------------------------------------------------
+
+[privacy]
+
+[privacy.disqus]
+disable = true
+
+[privacy.googleAnalytics]
+disable = true
+
+[privacy.instagram]
+disable = true
+
+[privacy.twitter]
+disable = true
+
+[privacy.vimeo]
+disable = true
+
+[privacy.youtube]
+disable = true
+
+# ------------------------------------------------------------------------------
+# security
+# ------------------------------------------------------------------------------
+
+[security]
+
+[security.exec]
+# allow specific external commands if needed
+allow = ["^go$", "^npx$", "^postcss$"]
