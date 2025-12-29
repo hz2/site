@@ -1,0 +1,38 @@
+{{- define "main" -}}
+<section class="home">
+  <div class="content">
+    {{ .Content }}
+  </div>
+  
+  {{- $notes := where .Site.RegularPages "Section" "notes" -}}
+  {{- if $notes -}}
+  <section class="recent-section">
+    <h2>recent notes</h2>
+    <ul class="page-list">
+      {{- range first 5 $notes.ByDate.Reverse -}}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
+      {{- end -}}
+    </ul>
+    <p><a href="/notes/">all notes</a></p>
+  </section>
+  {{- end -}}
+  
+  {{- $posts := where .Site.RegularPages "Section" "blog" -}}
+  {{- if $posts -}}
+  <section class="recent-section">
+    <h2>recent posts</h2>
+    <ul class="page-list">
+      {{- range first 5 $posts.ByDate.Reverse -}}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format $.Site.Params.dateFormat }}</time>
+      </li>
+      {{- end -}}
+    </ul>
+    <p><a href="/blog/">all posts</a></p>
+  </section>
+  {{- end -}}
+</section>
+{{- end -}}

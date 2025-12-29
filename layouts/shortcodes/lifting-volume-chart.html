@@ -1,0 +1,77 @@
+{{- $data := site.Data.weekly_volume -}}
+{{ if $data }}
+<div class="chart-container">
+  <h3>weekly lifting volume</h3>
+  <canvas id="liftingVolumeChart" height="300"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  function initVolumeChart() {
+    const data = {{ $data | jsonify | safeJS }};
+    const labels = data.map(d => {
+      const date = new Date(d.date);
+      return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    });
+    const volume = data.map(d => d.volume);
+    
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const textColor = isDark ? '#e0e0e0' : '#333';
+    const gridColor = isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)';
+    
+    const ctx = document.getElementById('liftingVolumeChart');
+    if (!ctx) return;
+    
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'volume (lbs)',
+          data: volume,
+          backgroundColor: isDark ? 'rgba(255, 183, 77, 0.7)' : 'rgba(251, 188, 4, 0.7)',
+          borderColor: isDark ? '#ffb74d' : '#fbbc04',
+          borderWidth: 1,
+          borderRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return context.parsed.y.toLocaleString() + ' lbs';
+              }
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: { display: true, text: 'volume (lbs)', color: textColor },
+            ticks: { 
+              color: textColor,
+              callback: function(value) { return value.toLocaleString(); }
+            },
+            grid: { color: gridColor }
+          },
+          x: {
+            ticks: { color: textColor, maxRotation: 45 },
+            grid: { display: false }
+          }
+        }
+      }
+    });
+  }
+  
+  if (typeof Chart === 'undefined') {
+    setTimeout(initVolumeChart, 500);
+  } else {
+    initVolumeChart();
+  }
+});
+</script>
+{{ end }}

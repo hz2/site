@@ -1,0 +1,28 @@
+{{- define "main" -}}
+<section class="list-page">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+  
+  {{- with .Content -}}
+  <div class="section-description">
+    {{ . }}
+  </div>
+  {{- end -}}
+  
+  {{- if .Pages -}}
+  <ul class="page-list">
+    {{- range .Pages.ByDate.Reverse -}}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{- with .Date -}}
+      <time datetime="{{ .Format "2006-01-02" }}">{{ .Format $.Site.Params.dateFormat }}</time>
+      {{- end -}}
+    </li>
+    {{- end -}}
+  </ul>
+  {{- else -}}
+  <p>no notes yet.</p>
+  {{- end -}}
+</section>
+{{- end -}}

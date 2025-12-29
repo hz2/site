@@ -1,0 +1,52 @@
+[
+  {
+    "name": "slu",
+    "count": 40,
+    "miles": 124.1
+  },
+  {
+    "name": "morning run",
+    "count": 27,
+    "miles": 75.0
+  },
+  {
+    "name": "treadmill",
+    "count": 3,
+    "miles": 5.1
+  },
+  {
+    "name": "san diego",
+    "count": 3,
+    "miles": 6.8
+  },
+  {
+    "name": "bethesda",
+    "count": 2,
+    "miles": 9.6
+  },
+  {
+    "name": "orange",
+    "count": 2,
+    "miles": 5.0
+  },
+  {
+    "name": "fredneck",
+    "count": 1,
+    "miles": 3.2
+  },
+  {
+    "name": "oceanside",
+    "count": 1,
+    "miles": 2.6
+  },
+  {
+    "name": "warm up",
+    "count": 1,
+    "miles": 0.4
+  },
+  {
+    "name": "light run",
+    "count": 1,
+    "miles": 3.0
+  }
+]

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+  {{- partial "head.html" . -}}
+</head>
+<body id="top">
+  {{- partial "header.html" . -}}
+  
+  <main class="container">
+    {{- block "main" . }}{{- end }}
+  </main>
+  
+  {{- partial "footer.html" . -}}
+  
+  {{/* load math only when needed */}}
+  {{- if or .Params.math .Site.Params.math -}}
+    {{- partial "math.html" . -}}
+  {{- end -}}
+  
+  {{/* theme toggle script */}}
+  {{- partial "theme-toggle.html" . -}}
+</body>
+</html>

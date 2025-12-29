@@ -1,0 +1,82 @@
+[
+  {
+    "name": "[afternoon] bethesda",
+    "date": "2025-12-27",
+    "distance_miles": 4.57,
+    "moving_time_minutes": 41.2,
+    "pace_per_mile": "9:01",
+    "elevation_gain_feet": 255.6
+  },
+  {
+    "name": "[afternoon] bethesda",
+    "date": "2025-12-26",
+    "distance_miles": 5.01,
+    "moving_time_minutes": 48.8,
+    "pace_per_mile": "9:44",
+    "elevation_gain_feet": 279.9
+  },
+  {
+    "name": "[afternoon] fredneck",
+    "date": "2025-12-24",
+    "distance_miles": 3.2,
+    "moving_time_minutes": 28.9,
+    "pace_per_mile": "9:02",
+    "elevation_gain_feet": 166.7
+  },
+  {
+    "name": "[afternoon] treadmill",
+    "date": "2025-12-21",
+    "distance_miles": 3.0,
+    "moving_time_minutes": 30.0,
+    "pace_per_mile": "10:00",
+    "elevation_gain_feet": 0.0
+  },
+  {
+    "name": "[evening] treadmill",
+    "date": "2025-12-13",
+    "distance_miles": 0.0,
+    "moving_time_minutes": 20.0,
+    "pace_per_mile": null,
+    "elevation_gain_feet": 0.0
+  },
+  {
+    "name": "[morning] treadmill",
+    "date": "2025-12-07",
+    "distance_miles": 2.09,
+    "moving_time_minutes": 20.0,
+    "pace_per_mile": "9:34",
+    "elevation_gain_feet": 0.0
+  },
+  {
+    "name": "[morning] orange",
+    "date": "2025-11-17",
+    "distance_miles": 3.28,
+    "moving_time_minutes": 29.9,
+    "pace_per_mile": "9:07",
+    "elevation_gain_feet": 16.7
+  },
+  {
+    "name": "[morning] orange",
+    "date": "2025-11-13",
+    "distance_miles": 1.71,
+    "moving_time_minutes": 17.2,
+    "pace_per_mile": "10:02",
+    "elevation_gain_feet": 0.0
+  },
+  {
+    "name": "[morning] slu",
+    "date": "2025-11-05",
+    "distance_miles": 3.13,
+    "moving_time_minutes": 27.6,
+    "pace_per_mile": "8:48",
+    "elevation_gain_feet": 0.0
+  },
+  {
+    "name": "[morning] slu",
+    "date": "2025-11-03",
+    "distance_miles": 3.15,
+    "moving_time_minutes": 25.9,
+    "pace_per_mile": "8:13",
+    "elevation_gain_feet": 0.0
+  }
+]

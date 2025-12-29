@@ -1,0 +1,64 @@
+{{- $data := site.Data.workout_summary -}}
+{{ if $data }}
+<div class="chart-container chart-small">
+  <h3>workout distribution</h3>
+  <canvas id="workoutDistributionChart" height="250"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  function initDistributionChart() {
+    const distribution = {{ $data.workout_distribution | jsonify | safeJS }};
+    const labels = distribution.map(d => d.group);
+    const counts = distribution.map(d => d.count);
+    
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const colors = isDark 
+      ? ['#64b5f6', '#81c784', '#ffb74d', '#f06292', '#ba68c8', '#4dd0e1']
+      : ['#4285f4', '#34a853', '#fbbc04', '#ea4335', '#9c27b0', '#00bcd4'];
+    
+    const ctx = document.getElementById('workoutDistributionChart');
+    if (!ctx) return;
+    
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: labels,
+        datasets: [{
+          data: counts,
+          backgroundColor: colors.slice(0, labels.length),
+          borderWidth: 2,
+          borderColor: isDark ? '#1e1e1e' : '#fff'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'right',
+            labels: {
+              color: isDark ? '#e0e0e0' : '#333',
+              padding: 15,
+              usePointStyle: true
+            }
+          }
+        }
+      }
+    });
+  }
+  
+  if (typeof Chart === 'undefined') {
+    setTimeout(initDistributionChart, 500);
+  } else {
+    initDistributionChart();
+  }
+});
+</script>
+
+<style>
+.chart-small {
+  max-width: 450px;
+}
+</style>
+{{ end }}

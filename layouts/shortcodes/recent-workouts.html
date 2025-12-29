@@ -1,0 +1,31 @@
+{{ $runs := site.Data.recent_runs }}
+
+<div class="recent-workouts">
+  {{ with $runs }}
+  <div class="chart-container">
+    <h3>recent runs</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>date</th>
+          <th>route</th>
+          <th>distance</th>
+          <th>pace</th>
+          <th>elevation</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range . }}
+        <tr>
+          <td>{{ .date }}</td>
+          <td>{{ .name }}</td>
+          <td>{{ .distance_miles }} mi</td>
+          <td>{{ .pace_per_mile }}/mi</td>
+          <td>{{ .elevation_gain_feet | lang.FormatNumber 0 }} ft</td>
+        </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+  {{ end }}
+</div>

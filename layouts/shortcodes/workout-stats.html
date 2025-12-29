@@ -1,0 +1,54 @@
+{{ $summary := site.Data.workout_summary }}
+{{ $running := site.Data.running_stats }}
+
+<div class="workout-stats">
+  <div class="stat-grid">
+    {{ with $running }}
+    <div class="stat-card">
+      <span class="stat-value">{{ .total_runs }}</span>
+      <span class="stat-label">runs</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">{{ .total_miles }}</span>
+      <span class="stat-label">miles</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">{{ .avg_pace }}/mi</span>
+      <span class="stat-label">avg pace</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">{{ .fastest_pace }}/mi</span>
+      <span class="stat-label">fastest</span>
+    </div>
+    {{ end }}
+    {{ with $summary }}
+    <div class="stat-card">
+      <span class="stat-value">{{ .total_workouts }}</span>
+      <span class="stat-label">lifts</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">{{ .total_volume_lbs | lang.FormatNumber 0 }}</span>
+      <span class="stat-label">lbs lifted</span>
+    </div>
+    {{ end }}
+  </div>
+  
+  {{ with $running }}
+  <div class="stat-highlights">
+    {{ with .fastest_run }}
+    <div class="highlight">
+      <span class="highlight-label">fastest mile</span>
+      <span class="highlight-value">{{ .pace }}/mi</span>
+      <span class="highlight-meta">{{ .name }} · {{ .date }}</span>
+    </div>
+    {{ end }}
+    {{ with .longest_run_details }}
+    <div class="highlight">
+      <span class="highlight-label">longest run</span>
+      <span class="highlight-value">{{ .distance }} mi</span>
+      <span class="highlight-meta">{{ .name }} · {{ .date }}</span>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>

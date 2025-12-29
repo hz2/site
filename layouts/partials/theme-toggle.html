@@ -1,0 +1,33 @@
+<script>
+(function() {
+  const toggle = document.getElementById('theme-toggle');
+  const body = document.body;
+  const storageKey = 'theme';
+  
+  // get stored theme or null
+  const stored = localStorage.getItem(storageKey);
+  
+  // apply stored preference
+  if (stored === 'dark') {
+    body.classList.add('dark');
+  } else if (stored === 'light') {
+    body.classList.add('light');
+  }
+  // if no stored preference, css handles it via prefers-color-scheme
+  
+  toggle.addEventListener('click', function() {
+    const isDark = body.classList.contains('dark') || 
+      (!body.classList.contains('light') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    
+    if (isDark) {
+      body.classList.remove('dark');
+      body.classList.add('light');
+      localStorage.setItem(storageKey, 'light');
+    } else {
+      body.classList.remove('light');
+      body.classList.add('dark');
+      localStorage.setItem(storageKey, 'dark');
+    }
+  });
+})();
+</script>

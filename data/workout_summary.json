@@ -1,0 +1,30 @@
+{
+  "total_workouts": 22,
+  "total_volume_lbs": 19775.0,
+  "workout_distribution": [
+    {
+      "group": "Cardio",
+      "count": 3
+    },
+    {
+      "group": "Chest/Back",
+      "count": 1
+    },
+    {
+      "group": "Legs",
+      "count": 5
+    },
+    {
+      "group": "Push",
+      "count": 8
+    },
+    {
+      "group": "Pull",
+      "count": 5
+    }
+  ],
+  "date_range": {
+    "start": "2024-01-10",
+    "end": "2024-02-13"
+  }
+}

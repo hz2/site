@@ -1,0 +1,30 @@
+{{/*
+  meta information displayed on single pages
+*/}}
+<div class="meta">
+  {{- with .Date -}}
+  {{- if not .IsZero -}}
+  <time datetime="{{ .Format "2006-01-02" }}">{{ .Format $.Site.Params.dateFormat }}</time>
+  {{- end -}}
+  {{- end -}}
+  
+  {{- if $.Site.Params.showReadingTime -}}
+  <span class="meta-sep"></span>
+  <span>{{ .ReadingTime }} min</span>
+  {{- end -}}
+  
+  {{- with .Params.status -}}
+  {{- if ne . "published" -}}
+  <span class="meta-sep"></span>
+  <span class="status status-{{ . }}">{{ . }}</span>
+  {{- end -}}
+  {{- end -}}
+</div>
+
+{{- with .Params.tags -}}
+<div class="tags">
+  {{- range . -}}
+  <span class="tag">{{ . }}</span>
+  {{- end -}}
+</div>
+{{- end -}}

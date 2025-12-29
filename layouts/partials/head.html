@@ -1,0 +1,34 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{{/* title */}}
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+
+{{/* description */}}
+{{- with .Description | default .Site.Params.description -}}
+<meta name="description" content="{{ . }}">
+{{- end -}}
+
+{{/* author */}}
+{{- with .Site.Params.author -}}
+<meta name="author" content="{{ . }}">
+{{- end -}}
+
+{{/* canonical url */}}
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{/* rss */}}
+{{- with .OutputFormats.Get "RSS" -}}
+<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .RelPermalink }}">
+{{- end -}}
+
+{{/* css - single file, no dependencies */}}
+<link rel="stylesheet" href="/css/style.css">
+
+{{/* chart.js for workout visualizations */}}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+{{/* preconnect for katex if math enabled */}}
+{{- if or .Params.math .Site.Params.math -}}
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+{{- end -}}

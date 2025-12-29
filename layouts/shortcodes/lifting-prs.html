@@ -1,0 +1,28 @@
+{{ $prs := site.Data.lifting_prs }}
+
+{{ if $prs }}
+<div class="lifting-prs">
+  <table>
+    <thead>
+      <tr>
+        <th>exercise</th>
+        <th>weight</th>
+        <th>reps</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range first 15 $prs }}
+      {{ if gt .max_weight 0 }}
+      <tr>
+        <td>{{ .exercise }}</td>
+        <td>{{ .max_weight }} lbs</td>
+        <td>{{ .max_reps }}</td>
+      </tr>
+      {{ end }}
+      {{ end }}
+    </tbody>
+  </table>
+</div>
+{{ else }}
+<p>No lifting data available.</p>
+{{ end }}

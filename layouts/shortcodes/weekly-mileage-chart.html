@@ -1,0 +1,68 @@
+{{- $data := site.Data.weekly_mileage -}}
+{{ if $data }}
+{{- $recent := last 12 $data -}}
+<div class="chart-container">
+  <h3>weekly running (last 12 weeks)</h3>
+  <canvas id="weeklyMileageChart" height="300"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  function initWeeklyChart() {
+    const data = {{ $recent | jsonify | safeJS }};
+    const labels = data.map(d => {
+      const date = new Date(d.date);
+      return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    });
+    const miles = data.map(d => d.miles);
+    
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const textColor = isDark ? '#e0e0e0' : '#333';
+    const gridColor = isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)';
+    
+    const ctx = document.getElementById('weeklyMileageChart');
+    if (!ctx) return;
+    
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'miles',
+          data: miles,
+          borderColor: isDark ? '#81c784' : '#34a853',
+          backgroundColor: isDark ? 'rgba(129, 199, 132, 0.1)' : 'rgba(52, 168, 83, 0.1)',
+          fill: true,
+          tension: 0.3,
+          pointRadius: 4,
+          pointHoverRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: { display: true, text: 'miles', color: textColor },
+            ticks: { color: textColor },
+            grid: { color: gridColor }
+          },
+          x: {
+            ticks: { color: textColor, maxRotation: 45 },
+            grid: { display: false }
+          }
+        }
+      }
+    });
+  }
+  
+  if (typeof Chart === 'undefined') {
+    setTimeout(initWeeklyChart, 500);
+  } else {
+    initWeeklyChart();
+  }
+});
+</script>
+{{ end }}

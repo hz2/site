@@ -1,0 +1,39 @@
+{{- $data := site.Data.running_locations -}}
+{{ if $data }}
+<div class="chart-container">
+  <h3>top locations</h3>
+  <div class="location-grid">
+    {{- range first 6 $data -}}
+    <div class="location-card">
+      <div class="location-name">{{ .name }}</div>
+      <div class="location-stats">
+        {{ .count }} runs · {{ printf "%.1f" .miles }} mi
+      </div>
+    </div>
+    {{- end -}}
+  </div>
+</div>
+
+<style>
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+.location-card {
+  padding: 1rem;
+  background: var(--bg-primary, #fff);
+  border-radius: 6px;
+  border: 1px solid var(--border-color, #e0e0e0);
+}
+.location-name {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary, #333);
+}
+.location-stats {
+  font-size: 0.85rem;
+  color: var(--text-secondary, #666);
+}
+</style>
+{{ end }}

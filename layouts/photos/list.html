@@ -1,0 +1,30 @@
+{{- define "main" -}}
+<section class="list-page">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+  
+  {{- with .Content -}}
+  <div class="section-description">
+    {{ . }}
+  </div>
+  {{- end -}}
+  
+  {{- if .Pages -}}
+  <div class="gallery-list">
+    {{- range .Pages.ByDate.Reverse -}}
+    <a href="{{ .RelPermalink }}" class="gallery-item">
+      {{- with .Params.cover -}}
+      <img src="{{ . }}" alt="{{ $.Title }}">
+      {{- else -}}
+      <div class="gallery-placeholder"></div>
+      {{- end -}}
+      <span class="gallery-title">{{ .Title }}</span>
+    </a>
+    {{- end -}}
+  </div>
+  {{- else -}}
+  <p>no photos yet.</p>
+  {{- end -}}
+</section>
+{{- end -}}

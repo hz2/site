@@ -1,0 +1,122 @@
+[
+  {
+    "exercise": "squat",
+    "max_weight": 245.0,
+    "reps": 8,
+    "date": "2024-01-14"
+  },
+  {
+    "exercise": "flat bb bench press",
+    "max_weight": 205.0,
+    "reps": 5,
+    "date": "2024-02-02"
+  },
+  {
+    "exercise": "incline chest press machine",
+    "max_weight": 115.0,
+    "reps": 10,
+    "date": "2024-01-25"
+  },
+  {
+    "exercise": "machine overhand rows",
+    "max_weight": 100.0,
+    "reps": 10,
+    "date": "2024-02-06"
+  },
+  {
+    "exercise": "calve raises",
+    "max_weight": 90.0,
+    "reps": 10,
+    "date": "2024-01-22"
+  },
+  {
+    "exercise": "single leg-ex",
+    "max_weight": 85.0,
+    "reps": 12,
+    "date": "2024-01-14"
+  },
+  {
+    "exercise": "flat db press",
+    "max_weight": 80.0,
+    "reps": 10,
+    "date": "2024-02-09"
+  },
+  {
+    "exercise": "hip abductors",
+    "max_weight": 80.0,
+    "reps": 12,
+    "date": "2024-02-07"
+  },
+  {
+    "exercise": "t-bar row",
+    "max_weight": 70.0,
+    "reps": 10,
+    "date": "2024-01-13"
+  },
+  {
+    "exercise": "flat-db press",
+    "max_weight": 70.0,
+    "reps": 13,
+    "date": "2024-01-15"
+  },
+  {
+    "exercise": "hack squat",
+    "max_weight": 70.0,
+    "reps": 8,
+    "date": "2024-01-28"
+  },
+  {
+    "exercise": "flat-db",
+    "max_weight": 60.0,
+    "reps": 10,
+    "date": "2024-01-13"
+  },
+  {
+    "exercise": "db incline press",
+    "max_weight": 60.0,
+    "reps": 10,
+    "date": "2024-01-20"
+  },
+  {
+    "exercise": "db shoulder press",
+    "max_weight": 50.0,
+    "reps": 7,
+    "date": "2024-01-20"
+  },
+  {
+    "exercise": "chest supported db rows",
+    "max_weight": 50.0,
+    "reps": 12,
+    "date": "2024-02-09"
+  },
+  {
+    "exercise": "seated shoulder press",
+    "max_weight": 45.0,
+    "reps": 10,
+    "date": "2024-01-15"
+  },
+  {
+    "exercise": "leg curls",
+    "max_weight": 45.0,
+    "reps": 8,
+    "date": "2024-01-22"
+  },
+  {
+    "exercise": "ez-bar skull crushers",
+    "max_weight": 40.0,
+    "reps": 8,
+    "date": "2024-02-05"
+  },
+  {
+    "exercise": "db bulgarian split squats",
+    "max_weight": 32.5,
+    "reps": 12,
+    "date": "2024-02-07"
+  },
+  {
+    "exercise": "cable flys",
+    "max_weight": 32.5,
+    "reps": 12,
+    "date": "2024-02-09"
+  }
+]
