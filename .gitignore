@@ -1,0 +1,18 @@
+# dependencies
+public/
+resources/_gen/
+.hugo_build.lock
+
+# os files
+.DS_Store
+Thumbs.db
+
+# editor files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# local dev
+node_modules/
