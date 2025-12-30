@@ -13,7 +13,7 @@ math: true
 
 ## running
 
-data pulled directly from strava, which tracks gps, heart rate, and performance metrics.
+data pulled directly from strava, which tracks gps and performance metrics.
 
 {{< monthly-mileage-chart >}}
 
