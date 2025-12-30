@@ -1,0 +1,51 @@
+{
+    // markdownlint configuration for blog posts
+    "config": {
+        // Line length: 80 chars, but ignore code blocks and links
+        "MD013": {
+            "line_length": 80,
+            "code_blocks": false,
+            "tables": false,
+            "stern": false
+        },
+        // Link fragments should be valid (catches broken internal links)
+        "MD051": true,
+        // Unused link/image references should be removed
+        "MD053": true,
+        // Headings should be surrounded by blank lines
+        "MD022": true,
+        // Lists should be surrounded by blank lines
+        "MD032": true,
+        // No trailing spaces
+        "MD009": true,
+        // No multiple blank lines
+        "MD012": true,
+        // Files should end with a single newline
+        "MD047": true,
+        // No bare URLs (use proper link syntax)
+        "MD034": true,
+        // Consistent heading style (atx style: # Heading)
+        "MD003": {
+            "style": "atx"
+        },
+        // Consistent unordered list style (dashes)
+        "MD004": {
+            "style": "dash"
+        },
+        // No hard tabs
+        "MD010": true,
+        // Disable rules that conflict with Hugo shortcodes or common patterns
+        "MD033": false, // Allow inline HTML (hugo shortcodes render to HTML)
+        "MD041": false, // First line doesn't need to be heading (frontmatter)
+        "MD025": false // Multiple top-level headings okay (frontmatter title)
+    },
+    // Only lint blog and notes content
+    "globs": [
+        "content/blog/**/*.md",
+        "content/notes/**/*.md"
+    ],
+    // Ignore drafts if any
+    "ignores": [
+        "**/drafts/**"
+    ]
+}

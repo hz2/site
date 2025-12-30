@@ -1,0 +1,31 @@
+name: Lint Markdown
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/**/*.md'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'content/**/*.md'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: markdownlint-cli2 --fix
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          fix: true
+          globs: |
+            content/blog/**/*.md
+            content/notes/**/*.md
+
+      - name: Commit fixes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "style: auto-fix markdown lint issues"
+          file_pattern: "content/**/*.md"
