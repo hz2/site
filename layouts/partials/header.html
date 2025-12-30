@@ -1,9 +1,9 @@
 <header class="site-header">
-  <img src="/black_logo.png" alt="" class="logo logo-light">
-  <img src="/white_logo.png" alt="" class="logo logo-dark">
+  <img src="{{ "black_logo.png" | relURL }}" alt="" class="logo logo-light">
+  <img src="{{ "white_logo.png" | relURL }}" alt="" class="logo logo-dark">
   
   <div class="container">
-    <a href="/" class="site-title">{{ .Site.Title }}</a>
+    <a href="{{ "" | relURL }}" class="site-title">{{ .Site.Title }}</a>
     
     <nav class="site-nav">
       {{- if .Site.Menus.main -}}
