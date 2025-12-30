@@ -1,0 +1,184 @@
+{{/* Volume Trend Chart - Shows weekly training volume with rolling average */}}
+{{- $data := site.Data.volume_trend -}}
+
+{{ if $data }}
+<div class="volume-trend">
+  <div class="volume-stats" id="volume-stats">
+    <!-- Populated by JavaScript -->
+  </div>
+  
+  <div class="volume-chart-container">
+    <canvas id="volumeTrendChart"></canvas>
+  </div>
+</div>
+
+<style>
+.volume-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.volume-stat {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.volume-stat .stat-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 0.25rem;
+}
+
+.volume-stat .stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--link);
+}
+
+.volume-stat .stat-unit {
+  font-size: 0.75rem;
+  color: var(--secondary);
+}
+
+.volume-chart-container {
+  height: 350px;
+  position: relative;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+(function() {
+  const data = {{ $data | jsonify | safeJS }};
+  
+  // Filter to valid dates (2024 onwards) and sort
+  const validData = data
+    .filter(d => d.week && d.week.startsWith('202'))
+    .sort((a, b) => a.week.localeCompare(b.week));
+  
+  // Calculate stats
+  const volumes = validData.map(d => d.volume);
+  const avgVolume = volumes.reduce((a, b) => a + b, 0) / volumes.length;
+  const maxVolume = Math.max(...volumes);
+  const totalWorkouts = validData.reduce((sum, d) => sum + d.workouts, 0);
+  const recentAvg = validData.slice(-4).reduce((sum, d) => sum + d.volume, 0) / 4;
+  
+  // Display stats
+  document.getElementById('volume-stats').innerHTML = `
+    <div class="volume-stat">
+      <div class="stat-label">Avg Weekly Volume</div>
+      <div class="stat-value">${Math.round(avgVolume).toLocaleString()}</div>
+      <div class="stat-unit">lbs</div>
+    </div>
+    <div class="volume-stat">
+      <div class="stat-label">Peak Volume</div>
+      <div class="stat-value">${Math.round(maxVolume).toLocaleString()}</div>
+      <div class="stat-unit">lbs</div>
+    </div>
+    <div class="volume-stat">
+      <div class="stat-label">Recent 4-Week Avg</div>
+      <div class="stat-value">${Math.round(recentAvg).toLocaleString()}</div>
+      <div class="stat-unit">lbs</div>
+    </div>
+    <div class="volume-stat">
+      <div class="stat-label">Total Workouts</div>
+      <div class="stat-value">${totalWorkouts}</div>
+      <div class="stat-unit">sessions</div>
+    </div>
+  `;
+  
+  // Create chart
+  const ctx = document.getElementById('volumeTrendChart').getContext('2d');
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  
+  const weeklyColor = isDark ? 'rgba(100, 181, 246, 1)' : 'rgba(54, 162, 235, 0.8)';
+  const weeklyBg = isDark ? 'rgba(100, 181, 246, 0.15)' : 'rgba(54, 162, 235, 0.1)';
+  const rollingColor = isDark ? 'rgba(255, 138, 128, 1)' : 'rgba(255, 99, 132, 1)';
+  const textColor = isDark ? '#ffffff' : '#333';
+  const tickColor = isDark ? '#e0e0e0' : '#666';
+  const gridColor = isDark ? 'rgba(255, 255, 255, 0.15)' : '#eee';
+  
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: validData.map(d => d.week),
+      datasets: [
+        {
+          label: 'Weekly Volume',
+          data: validData.map(d => d.volume),
+          borderColor: weeklyColor,
+          backgroundColor: weeklyBg,
+          fill: true,
+          tension: 0.3,
+          pointRadius: 2
+        },
+        {
+          label: '4-Week Rolling Avg',
+          data: validData.map(d => d.rolling_avg),
+          borderColor: rollingColor,
+          borderWidth: 2,
+          borderDash: [5, 5],
+          fill: false,
+          tension: 0.3,
+          pointRadius: 0
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: {
+        intersect: false,
+        mode: 'index'
+      },
+      scales: {
+        x: {
+          ticks: {
+            maxTicksLimit: 12,
+            color: tickColor
+          },
+          grid: {
+            color: gridColor
+          }
+        },
+        y: {
+          beginAtZero: true,
+          ticks: {
+            callback: value => value.toLocaleString() + ' lbs',
+            color: tickColor
+          },
+          grid: {
+            color: gridColor
+          }
+        }
+      },
+      plugins: {
+        legend: {
+          labels: {
+            color: textColor,
+            font: {
+              weight: 500
+            }
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return context.dataset.label + ': ' + context.parsed.y.toLocaleString() + ' lbs';
+            }
+          }
+        }
+      }
+    }
+  });
+})();
+</script>
+{{ else }}
+<p>No volume trend data available.</p>
+{{ end }}

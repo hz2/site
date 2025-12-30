@@ -43,13 +43,13 @@
 
 body.dark {
   --theme: #1d1e20;
-  --primary: #dadada;
-  --secondary: #9b9b9b;
+  --primary: #e8e8e8;
+  --secondary: #b0b0b0;
   --tertiary: #3d3d3d;
-  --content: #c4c4c4;
+  --content: #d0d0d0;
   --code-bg: #2e2e33;
   --code-block-bg: #2e2e33;
-  --border: #3a3a3a;
+  --border: #4a4a4a;
   --link: #6da3ff;
   --link-hover: #9fc3ff;
 }
@@ -58,13 +58,13 @@ body.dark {
 @media (prefers-color-scheme: dark) {
   body:not(.light) {
     --theme: #1d1e20;
-    --primary: #dadada;
-    --secondary: #9b9b9b;
+    --primary: #e8e8e8;
+    --secondary: #b0b0b0;
     --tertiary: #3d3d3d;
-    --content: #c4c4c4;
+    --content: #d0d0d0;
     --code-bg: #2e2e33;
     --code-block-bg: #2e2e33;
-    --border: #3a3a3a;
+    --border: #4a4a4a;
     --link: #6da3ff;
     --link-hover: #9fc3ff;
   }
@@ -591,19 +591,75 @@ body.dark .katex {
 }
 
 /* ------------------------------------------------------------------------------
- * footnotes
+ * footnotes & references (academic style)
  * --------------------------------------------------------------------------- */
 
 .footnotes {
-  margin-top: 2em;
-  padding-top: 1em;
+  margin-top: 3em;
+  padding-top: 1.5em;
   border-top: 1px solid var(--border);
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   color: var(--secondary);
 }
 
 .footnotes hr {
   display: none;
+}
+
+.footnotes ol {
+  padding-left: 1.5em;
+  margin: 0;
+}
+
+.footnotes li {
+  margin-bottom: 0.75em;
+  line-height: 1.6;
+}
+
+.footnotes li p {
+  margin: 0;
+  display: inline;
+}
+
+/* footnote reference in text */
+sup a[href^="#fn"],
+a.footnote-ref {
+  font-size: 0.75em;
+  font-weight: 500;
+  color: var(--link);
+  text-decoration: none;
+  padding: 0 0.15em;
+}
+
+sup a[href^="#fn"]:hover,
+a.footnote-ref:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* back reference arrow */
+.footnote-backref {
+  font-size: 0.8em;
+  margin-left: 0.25em;
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+.footnote-backref:hover {
+  color: var(--link);
+}
+
+/* highlight targeted footnote */
+.footnotes li:target {
+  background: var(--code-bg);
+  padding: 0.5em;
+  margin-left: -0.5em;
+  border-radius: var(--radius);
+}
+
+/* italic for book/journal titles */
+.footnotes em {
+  font-style: italic;
 }
 
 /* ------------------------------------------------------------------------------

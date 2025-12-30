@@ -1,0 +1,86 @@
+{{/* Rep Range PRs Visualization - Shows best 8-10 rep performances */}}
+{{- $data := site.Data.rep_range_prs -}}
+
+{{ if $data }}
+<div class="rep-range-prs">
+  <div class="pr-grid">
+    {{ range first 20 $data }}
+    {{ if gt .weight 0.0 }}
+    <div class="pr-card">
+      <div class="exercise-name">{{ .exercise }}</div>
+      <div class="pr-stats">
+        <span class="weight-reps">{{ .weight }} lbs x {{ .reps }}</span>
+        <span class="estimated-1rm">Est. 1RM: {{ .estimated_1rm }} lbs</span>
+      </div>
+      <div class="date">{{ .date }}{{ with .rpe }} <span class="rpe-badge">RPE {{ . }}</span>{{ end }}</div>
+    </div>
+    {{ end }}
+    {{ end }}
+  </div>
+</div>
+
+<style>
+.pr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.pr-card {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: transform 0.2s;
+}
+
+.pr-card:hover {
+  transform: translateY(-2px);
+}
+
+.pr-card .exercise-name {
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.pr-card .pr-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pr-card .weight-reps {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--link);
+}
+
+.pr-card .estimated-1rm {
+  font-size: 0.85rem;
+  color: var(--secondary);
+}
+
+.pr-card .date {
+  font-size: 0.8rem;
+  color: var(--secondary);
+  margin-top: 0.5rem;
+}
+
+.pr-card .rpe-badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--tertiary);
+  color: var(--primary);
+  margin-left: 0.5rem;
+}
+</style>
+{{ else }}
+<p>No rep range PR data available.</p>
+{{ end }}

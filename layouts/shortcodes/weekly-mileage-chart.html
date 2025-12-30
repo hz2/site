@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const miles = data.map(d => d.miles);
     
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    const textColor = isDark ? '#e0e0e0' : '#333';
-    const gridColor = isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)';
+    const textColor = isDark ? '#ffffff' : '#333';
+    const gridColor = isDark ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.1)';
     
     const ctx = document.getElementById('weeklyMileageChart');
     if (!ctx) return;

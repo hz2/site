@@ -2,6 +2,7 @@
 title: "workouts"
 description: "training log and statistics"
 layout: "single"
+math: true
 ---
 
 ## overview
@@ -12,11 +13,11 @@ layout: "single"
 
 ## running
 
+data pulled directly from strava, which tracks gps, heart rate, and performance metrics.
+
 {{< monthly-mileage-chart >}}
 
 {{< weekly-mileage-chart >}}
-
-{{< run-locations-map >}}
 
 {{< recent-workouts >}}
 
@@ -26,6 +27,26 @@ layout: "single"
 
 {{< workout-distribution-chart >}}
 
-{{< lifting-volume-chart >}}
+### key lifts
 
-{{< lifting-prs >}}
+progress across rep ranges for the main compound movements. strength (1-5 reps), hypertrophy (6-10 reps), and endurance (11+ reps).
+
+{{< key-lift-prs >}}
+
+### strength standards
+
+estimated 1RM relative to bodyweight for the big lifts.
+
+{{< strength-standards >}}
+
+### volume trend
+
+weekly training volume with 4-week rolling average.
+
+{{< volume-trend >}}
+
+---
+
+## references
+
+[1] Brzycki, M. (1993). "Strength Testing—Predicting a One-Rep Max from Reps-to-Fatigue." *Journal of Physical Education, Recreation & Dance*, 64(1), 88-90.

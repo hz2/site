@@ -1,7 +1,7 @@
 # site
 
-[Hugo]() static site with support for notes, blog posts, photos,
-and workout data visualization.
+[Hugo](https://github.com/gohugoio/hugo) static site with support for notes,
+blog posts, photos, and workout data visualization.
 
 ## setup
 

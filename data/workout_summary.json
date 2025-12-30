@@ -1,11 +1,7 @@
 {
-  "total_workouts": 335,
+  "total_workouts": 300,
   "total_volume_lbs": 544310.0,
   "workout_distribution": [
-    {
-      "group": "Cardio",
-      "count": 35
-    },
     {
       "group": "Chest/Back",
       "count": 1

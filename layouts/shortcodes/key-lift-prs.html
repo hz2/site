@@ -1,0 +1,118 @@
+{{/* Key Lift PRs - Shows compound lift PRs across rep ranges with recent context */}}
+{{- $data := site.Data.key_lift_prs -}}
+
+{{ if $data }}
+<div class="key-lift-prs">
+  {{ range $data }}
+  <div class="lift-card">
+    <div class="lift-header">
+      <span class="lift-name">{{ .exercise }}</span>
+      <span class="best-e1rm">{{ .best_estimated_1rm }} lb</span>
+    </div>
+    
+    <div class="rep-ranges">
+      {{ with .strength_pr }}
+      <div class="range-block strength">
+        <span class="range-label">1-5 reps</span>
+        <span class="range-value">{{ .weight }} x {{ .reps }}</span>
+      </div>
+      {{ end }}
+      
+      {{ with .hypertrophy_pr }}
+      <div class="range-block hypertrophy">
+        <span class="range-label">6-10 reps</span>
+        <span class="range-value">{{ .weight }} x {{ .reps }}</span>
+      </div>
+      {{ end }}
+      
+      {{ with .endurance_pr }}
+      <div class="range-block endurance">
+        <span class="range-label">11+ reps</span>
+        <span class="range-value">{{ .weight }} x {{ .reps }}</span>
+      </div>
+      {{ end }}
+    </div>
+    
+    {{ with .recent }}
+    <div class="recent-context">
+      Recent: {{ .weight }} x {{ .reps }}{{ with .rpe }} @ {{ . }}{{ end }} ({{ .date }})
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+
+<style>
+.key-lift-prs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.lift-card {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.lift-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.lift-header .lift-name {
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--primary);
+}
+
+.lift-header .best-e1rm {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--link);
+}
+
+.rep-ranges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.range-block {
+  display: flex;
+  flex-direction: column;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  background: var(--tertiary);
+  flex: 1;
+  min-width: 70px;
+}
+
+.range-block .range-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+
+.range-block .range-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.range-block.strength { border-left: 2px solid #dc3545; }
+.range-block.hypertrophy { border-left: 2px solid #28a745; }
+.range-block.endurance { border-left: 2px solid #007bff; }
+
+.recent-context {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--secondary);
+}
+</style>
+{{ else }}
+<p>No key lift data available.</p>
+{{ end }}

@@ -1,0 +1,105 @@
+{{/* Training Frequency - Shows workout distribution by muscle group */}}
+{{- $data := site.Data.training_frequency -}}
+
+{{ if $data }}
+<div class="training-frequency">
+  <div class="freq-stats">
+    <div class="freq-stat">
+      <span class="stat-value">{{ $data.total_workouts }}</span>
+      <span class="stat-label">Total Workouts</span>
+    </div>
+  </div>
+
+  <h4>Workouts by Muscle Group</h4>
+  <div class="muscle-group-bars">
+    {{ range $group, $count := $data.muscle_group_frequency }}
+    <div class="muscle-bar-row">
+      <span class="muscle-name">{{ $group }}</span>
+      <div class="bar-container">
+        <div class="bar" style="width: {{ mul (div (float $count) (float $data.total_workouts)) 100 }}%"></div>
+        <span class="bar-count">{{ $count }}</span>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+<style>
+.training-frequency {
+  margin: 1rem 0;
+}
+
+.freq-stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.freq-stat {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.freq-stat .stat-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--link);
+}
+
+.freq-stat .stat-label {
+  font-size: 0.8rem;
+  color: var(--secondary);
+  text-transform: uppercase;
+}
+
+.training-frequency h4 {
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.muscle-group-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.muscle-bar-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.muscle-name {
+  font-size: 0.9rem;
+  color: var(--primary);
+  text-align: right;
+}
+
+.bar-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bar {
+  height: 24px;
+  background: var(--link);
+  border-radius: 4px;
+  min-width: 4px;
+  transition: width 0.3s ease;
+}
+
+.bar-count {
+  font-size: 0.85rem;
+  color: var(--secondary);
+  min-width: 30px;
+}
+</style>
+{{ else }}
+<p>No training frequency data available.</p>
+{{ end }}
