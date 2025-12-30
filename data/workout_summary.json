@@ -1,10 +1,10 @@
 {
-  "total_workouts": 22,
-  "total_volume_lbs": 19775.0,
+  "total_workouts": 335,
+  "total_volume_lbs": 544310.0,
   "workout_distribution": [
     {
       "group": "Cardio",
-      "count": 3
+      "count": 35
     },
     {
       "group": "Chest/Back",
@@ -12,19 +12,39 @@
     },
     {
       "group": "Legs",
-      "count": 5
+      "count": 45
     },
     {
       "group": "Push",
-      "count": 8
+      "count": 87
     },
     {
       "group": "Pull",
-      "count": 5
+      "count": 77
+    },
+    {
+      "group": "Full-Body",
+      "count": 50
+    },
+    {
+      "group": "Arms/Shoulders",
+      "count": 6
+    },
+    {
+      "group": "Lower",
+      "count": 16
+    },
+    {
+      "group": "Upper",
+      "count": 17
+    },
+    {
+      "group": "pump day",
+      "count": 1
     }
   ],
   "date_range": {
-    "start": "2024-01-10",
-    "end": "2024-02-13"
+    "start": "0010-01-09",
+    "end": "2025-12-18"
   }
 }

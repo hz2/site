@@ -1,9 +1,57 @@
 [
   {
+    "exercise": "deadlift",
+    "max_weight": 335.0,
+    "reps": 3,
+    "date": "2025-03-11"
+  },
+  {
+    "exercise": "bb squat",
+    "max_weight": 315.0,
+    "reps": 4,
+    "date": "2024-10-10"
+  },
+  {
+    "exercise": "paused deadlift",
+    "max_weight": 315.0,
+    "reps": 2,
+    "date": "2025-01-28"
+  },
+  {
+    "exercise": "paused deadlifts",
+    "max_weight": 315.0,
+    "reps": 2,
+    "date": "2025-03-04"
+  },
+  {
+    "exercise": "back squat",
+    "max_weight": 275.0,
+    "reps": 6,
+    "date": "2025-02-05"
+  },
+  {
     "exercise": "squat",
     "max_weight": 245.0,
     "reps": 8,
     "date": "2024-01-14"
+  },
+  {
+    "exercise": "bb bench",
+    "max_weight": 225.0,
+    "reps": 2,
+    "date": "2024-07-04"
+  },
+  {
+    "exercise": "bb deadlift",
+    "max_weight": 225.0,
+    "reps": 4,
+    "date": "2025-01-11"
+  },
+  {
+    "exercise": "paused bb squat",
+    "max_weight": 225.0,
+    "reps": 4,
+    "date": "2025-06-02"
   },
   {
     "exercise": "flat bb bench press",
@@ -12,111 +60,63 @@
     "date": "2024-02-02"
   },
   {
-    "exercise": "incline chest press machine",
-    "max_weight": 115.0,
-    "reps": 10,
-    "date": "2024-01-25"
+    "exercise": "paused flat bb bench",
+    "max_weight": 205.0,
+    "reps": 3,
+    "date": "2024-04-01"
   },
   {
-    "exercise": "machine overhand rows",
-    "max_weight": 100.0,
-    "reps": 10,
-    "date": "2024-02-06"
+    "exercise": "flat bb bench",
+    "max_weight": 205.0,
+    "reps": 4,
+    "date": "2024-06-26"
   },
   {
-    "exercise": "calve raises",
-    "max_weight": 90.0,
-    "reps": 10,
-    "date": "2024-01-22"
+    "exercise": "paused bb back squat",
+    "max_weight": 205.0,
+    "reps": 4,
+    "date": "2025-11-15"
   },
   {
-    "exercise": "single leg-ex",
-    "max_weight": 85.0,
-    "reps": 12,
-    "date": "2024-01-14"
+    "exercise": "paused bb bench",
+    "max_weight": 195.0,
+    "reps": 5,
+    "date": "2024-03-18"
   },
   {
-    "exercise": "flat db press",
-    "max_weight": 80.0,
-    "reps": 10,
-    "date": "2024-02-09"
-  },
-  {
-    "exercise": "hip abductors",
-    "max_weight": 80.0,
-    "reps": 12,
-    "date": "2024-02-07"
-  },
-  {
-    "exercise": "t-bar row",
-    "max_weight": 70.0,
-    "reps": 10,
-    "date": "2024-01-13"
-  },
-  {
-    "exercise": "flat-db press",
-    "max_weight": 70.0,
-    "reps": 13,
-    "date": "2024-01-15"
-  },
-  {
-    "exercise": "hack squat",
-    "max_weight": 70.0,
+    "exercise": "bb bench press",
+    "max_weight": 185.0,
     "reps": 8,
-    "date": "2024-01-28"
+    "date": "2024-02-19"
   },
   {
-    "exercise": "flat-db",
-    "max_weight": 60.0,
-    "reps": 10,
-    "date": "2024-01-13"
+    "exercise": "paused flat bb bench press",
+    "max_weight": 185.0,
+    "reps": 5,
+    "date": "2024-06-04"
   },
   {
-    "exercise": "db incline press",
-    "max_weight": 60.0,
-    "reps": 10,
-    "date": "2024-01-20"
+    "exercise": "bench press",
+    "max_weight": 185.0,
+    "reps": 5,
+    "date": "2024-06-20"
   },
   {
-    "exercise": "db shoulder press",
-    "max_weight": 50.0,
-    "reps": 7,
-    "date": "2024-01-20"
+    "exercise": "bb flat bench",
+    "max_weight": 185.0,
+    "reps": 3,
+    "date": "2025-01-11"
   },
   {
-    "exercise": "chest supported db rows",
-    "max_weight": 50.0,
-    "reps": 12,
-    "date": "2024-02-09"
+    "exercise": "paused bb bench press",
+    "max_weight": 185.0,
+    "reps": 3,
+    "date": "2025-04-09"
   },
   {
-    "exercise": "seated shoulder press",
-    "max_weight": 45.0,
-    "reps": 10,
-    "date": "2024-01-15"
-  },
-  {
-    "exercise": "leg curls",
-    "max_weight": 45.0,
+    "exercise": "sumo bb squat",
+    "max_weight": 185.0,
     "reps": 8,
-    "date": "2024-01-22"
-  },
-  {
-    "exercise": "ez-bar skull crushers",
-    "max_weight": 40.0,
-    "reps": 8,
-    "date": "2024-02-05"
-  },
-  {
-    "exercise": "db bulgarian split squats",
-    "max_weight": 32.5,
-    "reps": 12,
-    "date": "2024-02-07"
-  },
-  {
-    "exercise": "cable flys",
-    "max_weight": 32.5,
-    "reps": 12,
-    "date": "2024-02-09"
+    "date": "2025-02-23"
   }
 ]

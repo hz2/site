@@ -10,6 +10,11 @@
     "miles": 75.0
   },
   {
+    "name": "bethesda",
+    "count": 3,
+    "miles": 14.6
+  },
+  {
     "name": "treadmill",
     "count": 3,
     "miles": 5.1
@@ -18,11 +23,6 @@
     "name": "san diego",
     "count": 3,
     "miles": 6.8
-  },
-  {
-    "name": "bethesda",
-    "count": 2,
-    "miles": 9.6
   },
   {
     "name": "orange",
