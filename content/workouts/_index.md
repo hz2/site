@@ -37,6 +37,10 @@ estimated 1RM relative to bodyweight for the big lifts.
 
 {{< strength-standards >}}
 
+### accessory lifts
+
+{{< accessory-prs >}}
+
 ### volume trend
 
 weekly training volume with 4-week rolling average.
