@@ -33,8 +33,6 @@ progress across rep ranges for the main compound movements. strength (1-5 reps),
 
 {{< key-lift-prs >}}
 
-### strength standards
-
 estimated 1RM relative to bodyweight for the big lifts.
 
 {{< strength-standards >}}

@@ -135,24 +135,6 @@
       "estimated_1rm": 246.7,
       "bw_ratio": 1.38,
       "date": "2024-05-06"
-    },
-    {
-      "lift": "Row",
-      "exercise": "underhand bb row",
-      "weight": 135.0,
-      "reps": 11,
-      "estimated_1rm": 186.9,
-      "bw_ratio": 1.05,
-      "date": "2024-02-14"
-    },
-    {
-      "lift": "Overhead Press",
-      "exercise": "machine shoulder press",
-      "weight": 140.0,
-      "reps": 10,
-      "estimated_1rm": 186.7,
-      "bw_ratio": 1.05,
-      "date": "2024-07-03"
     }
   ],
   "training_frequency": {
