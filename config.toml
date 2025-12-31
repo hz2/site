@@ -9,7 +9,7 @@
 # github pages url
 baseURL = "https://hz2.github.io/site/"
 languageCode = "en-us"
-title = "uhh idk yet"
+title = "jsondev"
 
 # theme is not used - all templates are in layouts/
 # theme = ""
