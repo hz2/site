@@ -1,11 +1,11 @@
 ---
 title: "fitness tracker"
-date: 2025-12-29
+date: 2025-12-30
 description: "personal fitness tracker using hugo and python"
 tags: ["python", "hugo", "fitness", "automation"]
 ---
 
-I've been tracking my workouts[^1] for a while now—running data syncs from
+I've been tracking my workouts[^1] for a while now, running data syncs from
 [strava](https://www.strava.com/), lifting logs live in a google sheet.
 The natural instinct would be to build a  web app with a database, user auth,
 real-time updates. But I went a different direction: a static site that rebuilds
