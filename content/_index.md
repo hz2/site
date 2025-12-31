@@ -2,4 +2,4 @@
 title: "home"
 ---
 
-welcome to the site.
+`0x7F454C46` (welcome)
