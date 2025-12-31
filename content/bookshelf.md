@@ -14,6 +14,8 @@ A running collection of books and articles I've read, updated each year.
 - Rust for Rustaceans: Idiomatic Programming for Experienced Developers[^13]
 - The Pragmatic Programmer: Your Journey to Mastery, 20th Anniversary Edition[^14]
 - The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness[^15]
+- Emotional Intelligence: Why It Can Matter More Than IQ[^16]
+  - My significant other got me this book for Christmas, I couldn't imagine why...
 
 ### 2025
 
@@ -74,3 +76,4 @@ a master of the craft.
 [^13]: Gjengset, Jon. *Rust for Rustaceans: Idiomatic Programming for Experienced Developers*. No Starch Press, 2021.
 [^14]: Hunt, Andy and Dave Thomas. *The Pragmatic Programmer: Your Journey to Mastery, 20th Anniversary Edition*. Addison-Wesley Professional, 2019.
 [^15]: Housel, Morgan. *The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness*. Harriman House, 2020.
+[^16]: Goleman, Daniel. *Emotional Intelligence: Why It Can Matter More Than IQ*. Bantam Books, 1995.
