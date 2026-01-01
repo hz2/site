@@ -3,12 +3,9 @@
 [Hugo](https://github.com/gohugoio/hugo) static site with support for notes,
 blog posts, photos, and workout data visualization.
 
-## setup
+## starting
 
 ```bash
-# install hugo (macos)
-brew install hugo
-
 # run development server
 cd site
 hugo server -D
