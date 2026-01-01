@@ -1,6 +1,5 @@
 ---
-title: "cargo"
-date: 2026-1-1
+title: "Cargo"
 description: "cargo"
 tags: ["cargo", "rust", "package management"]
 ---

@@ -1,6 +1,5 @@
 ---
 title: "Git"
-date: 2026-1-1
 description: "Git"
 tags: ["git"]
 ---

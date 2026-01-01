@@ -1,6 +1,5 @@
 ---
 title: "blob"
-date: 2026-1-1
 description: "blob"
 tags: ["blob"]
 ---

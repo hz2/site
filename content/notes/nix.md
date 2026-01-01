@@ -1,6 +1,5 @@
 ---
 title: "Nix"
-date: 2026-1-1
 description: "nix"
 tags: ["nix", "linux"]
 ---
