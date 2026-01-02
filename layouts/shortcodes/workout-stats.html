@@ -36,17 +36,17 @@
   {{ with $running }}
   <div class="stat-highlights">
     {{ with .fastest_run }}
-    <div class="highlight">
-      <span class="highlight-label">fastest mile</span>
-      <span class="highlight-value">{{ .pace }}/mi</span>
-      <span class="highlight-meta">{{ .name }} · {{ .date }}</span>
+    <div class="stat-highlight">
+      <span class="stat-highlight-label">fastest mile</span>
+      <span class="stat-highlight-value">{{ .pace }}/mi</span>
+      <span class="stat-highlight-meta">{{ .name }} · {{ .date }}</span>
     </div>
     {{ end }}
     {{ with .longest_run_details }}
-    <div class="highlight">
-      <span class="highlight-label">longest run</span>
-      <span class="highlight-value">{{ .distance }} mi</span>
-      <span class="highlight-meta">{{ .name }} · {{ .date }}</span>
+    <div class="stat-highlight">
+      <span class="stat-highlight-label">longest run</span>
+      <span class="stat-highlight-value">{{ .distance }} mi</span>
+      <span class="stat-highlight-meta">{{ .name }} · {{ .date }}</span>
     </div>
     {{ end }}
   </div>
