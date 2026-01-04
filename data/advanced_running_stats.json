@@ -1,9 +1,9 @@
 {
-  "total_runs": 86,
+  "total_runs": 87,
   "streaks": {
-    "current_streak": 0,
+    "current_streak": 1,
     "longest_streak": 2,
-    "last_run_date": "2025-12-31"
+    "last_run_date": "2026-01-03"
   },
   "pace_zones": [
     {
@@ -11,21 +11,21 @@
       "pace_range": ">9:00",
       "count": 33,
       "miles": 96.2,
-      "percentage": 38.8
+      "percentage": 38.4
     },
     {
       "zone": "steady",
       "pace_range": "9:00 - 8:00",
       "count": 43,
       "miles": 131.9,
-      "percentage": 50.6
+      "percentage": 50.0
     },
     {
       "zone": "tempo",
       "pace_range": "8:00 - 7:00",
-      "count": 8,
-      "miles": 23.0,
-      "percentage": 9.4
+      "count": 9,
+      "miles": 24.0,
+      "percentage": 10.5
     },
     {
       "zone": "threshold",
@@ -172,6 +172,15 @@
       "elevation_feet": 1206.0,
       "avg_pace": "9:25",
       "change_pct": 143.7
+    },
+    {
+      "month": "2026-01",
+      "miles": 1.0,
+      "runs": 1,
+      "hours": 0.1,
+      "elevation_feet": 0.0,
+      "avg_pace": "7:42",
+      "change_pct": -96.4
     }
   ]
 }
