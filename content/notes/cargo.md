@@ -88,3 +88,31 @@ cargo publish --dry-run
 ```shell
 cargo generate --git <template-repo-url> --name <project-name>
 ```
+
+## `msrv`
+
+```shell
+cargo install cargo-msrv
+cargo msrv
+```
+
+- install `cargo-msrv` to check the minimum supported Rust version
+- then run `cargo msrv` in your project directory to find the minimum Rust
+  version required by your dependencies
+
+## `hack`
+
+```shell
+cargo install cargo-hack
+cargo hack check --all-features
+cargo hack test --all-features
+```
+
+- use `cargo-hack` to run checks and tests across all features and targets
+
+## `bisect-rustc`
+
+```shell
+cargo install cargo-bisect-rustc
+cargo bisect-rustc --start=<good-version> --end=<bad-version> -- cargo test
+```
