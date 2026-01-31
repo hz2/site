@@ -4,28 +4,28 @@
     "pace_range": ">9:00",
     "count": 34,
     "miles": 98.2,
-    "percentage": 35.8
+    "percentage": 35.4
   },
   {
     "zone": "steady",
     "pace_range": "9:00 - 8:00",
-    "count": 50,
-    "miles": 145.1,
-    "percentage": 52.6
+    "count": 51,
+    "miles": 148.2,
+    "percentage": 53.1
   },
   {
     "zone": "tempo",
     "pace_range": "8:00 - 7:00",
     "count": 10,
     "miles": 25.0,
-    "percentage": 10.5
+    "percentage": 10.4
   },
   {
     "zone": "threshold",
     "pace_range": "7:00 - 6:00",
     "count": 1,
     "miles": 1.0,
-    "percentage": 1.1
+    "percentage": 1.0
   },
   {
     "zone": "speed",
