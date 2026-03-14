@@ -5,14 +5,14 @@
     "miles": 124.1
   },
   {
+    "name": "treadmill",
+    "count": 27,
+    "miles": 62.5
+  },
+  {
     "name": "morning run",
     "count": 27,
     "miles": 75.0
-  },
-  {
-    "name": "treadmill",
-    "count": 26,
-    "miles": 59.4
   },
   {
     "name": "bethesda",
